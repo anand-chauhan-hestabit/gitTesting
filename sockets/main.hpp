@@ -15,7 +15,7 @@ class sockets
      Client client;
     public:
 
-    sockets()
+   void  createConnection()
     {
         // int choice;
         std::cout << "Choose an option:\n";

@@ -127,23 +127,23 @@ public:
             if (sockets::choice == 1)
             {
 
-                packetToSend << gameData.right_paddle_position_x;
-                packetToSend << gameData.right_paddle_position_y;
+                packetToSend << ball.first_player_scores;
+                // packetToSend << gameData.right_paddle_position_y;
 
                 server.sendGameData(packetToSend);
             }
-            if (sockets::choice == 1)
+            if (sockets::choice == 2)
             {
                 GameData gameDataupdate;
                 client.receiveGameData(packetToreceive);
-                if (packetToreceive >> gameDataupdate.right_paddle_position_x && packetToreceive >> gameDataupdate.right_paddle_position_y)
+                if (packetToreceive >> ball.second_player_scores)
                 {
                     // Process the received game data as needed
                     // For example, update the game state based on the data
                     // ...
                     // ball.ball_position_X = gameDataupdate.ball_position_x;
-                    second_player.paddle_position_X = gameDataupdate.right_paddle_position_x;
-                    second_player.paddle_position_Y = gameDataupdate.right_paddle_position_y;
+                    ball.second_player_scores = ball.second_player_scores;
+                    // second_player.paddle_position_Y = gameDataupdate.right_paddle_position_y;
                 }
             }
 

@@ -3,6 +3,7 @@
 int main()
 {   
     sockets sock;
+    sock.createConnection();
     Game game;
     // client_socket create;
     // serverSocket create;
